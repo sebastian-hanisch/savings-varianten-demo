@@ -231,7 +231,7 @@ st.markdown("---")
 # --- Experiment 4 --------------------------------------------------------------------------------------------------------------------
 
 st.subheader("🔬 Mehrfach rechnen")
-st.caption("Savings kostet Millisekunden: Neun λ-Werte, zwanzig verrauschte Läufe (1 %) oder bis zu 45 Läufe über λ, μ und ν zusammen sind jeweils billiger als ein Lauf von Einfügen nach Split. Je Strategie zählt der beste Plan.")
+st.caption("Savings kostet Millisekunden: Neun λ-Werte, zwanzig verrauschte Läufe (1 %) oder bis zu 45 Läufe über λ, μ und ν zusammen rechnen schneller als ein Lauf von Einfügen nach Split; ob sie auch bessere Pläne liefern, zeigen die Bänder (ab n = 25 meist ja, bis n = 12 gleichauf). Je Strategie zählt der beste Plan.")
 table = ["| Strategie | Läufe | Kosten | über Optimum | Routen | gegen Einfügen nach Split |", "|---|---|---|---|---|---|"]
 for key in C.STRATEGY_KEYS:
     p = plans[key]

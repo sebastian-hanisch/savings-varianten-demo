@@ -82,7 +82,7 @@ ASSUMPTIONS_MARKDOWN = """**Annahmen**
 - Live rechnet die App bis zu 12 Kunden mit exaktem Optimum. Die Bänder gelten für 10 und 12 Kunden (exaktes Optimum, je 80 feste Instanzen) und für 25, 50 und 100 Kunden (je 32 feste Instanzen, Referenz PyVRP, nicht bewiesen optimal) bei drei Zielrouten sowie für 50 Kunden mit 8 Zielrouten; nur Zellen mit Referenz.
 - Die Referenz PyVRP (5 Sekunden, ein Seed) ist eine gute Lösung, keine Untergrenze: Abstände zur Referenz sind keine Abstände zum Optimum.
 - „Bestes von k Läufen“ wählt je Instanz den billigsten Plan; das Gitter von λ-Werten, die Rauschstufe und die Zahl der Läufe stehen fest und sind nicht an den Instanzen angepasst. Das beste feste λ je Zelle ist ein Messwert, kein Verfahren.
-- Einfügen nach Split rechnet bei 100 Kunden etwa 10 Sekunden je Instanz; seine Kosten stammen aus den Bändern von Stück 4.
+- Einfügen nach Split rechnet bei 100 Kunden je nach Maschine und Last einige zehn Sekunden je Instanz (hier gemessen: 53 und 57 Sekunden unter Last; die Schwesterdemo start-gegen-nachbarschaft nennt rund 40 Sekunden); seine Kosten stammen aus den Bändern von Stück 4.
 
 **Bekannte Probleme und Unsicherheiten**
 - Die Bänder sind Spannen über feste Instanzen, keine Trends und keine Aussagen über andere Kartenarten oder Zielroutenzahlen; zu n steht keine Trendaussage in der App.

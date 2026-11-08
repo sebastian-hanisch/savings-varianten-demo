@@ -100,8 +100,10 @@ def test_mu_and_nu_by_hand(small):
 def test_the_plan_instance_of_stueck_1_to_4_over_lambda(hand):
     for lam in (0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6):
         assert A.plan_length(hand, S.savings(hand, S.Params(lam)).routes) == pytest.approx(OPTIMUM), lam
-    r = S.savings(hand, S.Params(2.0))
-    assert S.canonical(r.routes) == ((1, 4), (2, 6), (3,), (5,)) and A.plan_length(hand, r.routes) == pytest.approx(52.28, abs=ROUND2)
+    # ab λ = 1,7 bleiben (3) und (5) allein (README: „kostet ab λ = 1,7 52,28“); 1,6 ist noch das Optimum
+    for lam in (1.7, 1.8, 1.9, 2.0):
+        r = S.savings(hand, S.Params(lam))
+        assert S.canonical(r.routes) == ((1, 4), (2, 6), (3,), (5,)) and A.plan_length(hand, r.routes) == pytest.approx(52.28, abs=ROUND2), lam
     assert len(S.savings_list(hand, S.Params(2.0))) < 15 == len(S.savings_list(hand))
 
 
